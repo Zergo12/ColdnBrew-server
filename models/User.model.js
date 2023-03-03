@@ -18,6 +18,13 @@ const userSchema = new Schema(
       type: String,
       required: [true, "Name is required."],
     },
+    description:{
+      type: String
+    },
+    picture: {
+      type: String,
+      default: "https://static-00.iconduck.com/assets.00/user-avatar-glad-icon-256x255-cbmmpmut.png",
+    }
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

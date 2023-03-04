@@ -20,17 +20,27 @@ router.get("/recipes", (req, res, next) => {
     .catch(err => next(err))
     })
 
-router.get("/:id", (req, res, next) => {
+router.get("/:id", (req, res) => {
     const { id } = req.params
-
+    console.log (id) 
     Item
     .findById(id)
-    .then(Item => {
-        res.json('/:id', {item:Item})
+    .then(item => {
+        res.json(item)
     })
-    .catch(err => next(err))
+    .catch(err => console.log(err))
 })
 
+router.put("/edit/:id", (req, res) => {
+    const { id } = req.params
+    const {image, title, description, category} = req.body
+    Item
+    .findByIdAndUpdate(id, {image, title, description, category})
+    .then(item => {
+        res.json(item)
+    })
+    .catch(err => console.log(err))
+})
 
 router.post("/create", ( req, res, next ) => {
     const { title, description, image, category} = req.body
@@ -42,5 +52,16 @@ router.post("/create", ( req, res, next ) => {
     .catch((err) => next(err))
 })
 
+router.post("/delete/:id" , (req,res,next) => {
+    const { id } = req.params 
+    Item
+    .findByIdAndDelete(id)
+    .then(() => {
+        res.json()
+    })
+    .catch(err => {
+        next(err)
+    })
+  })
 
 module.exports = router

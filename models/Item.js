@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const itemSchema = new Schema(
-{
+  {
     title: {
       type: String,
     },
@@ -14,8 +14,8 @@ const itemSchema = new Schema(
     category: {
       type: String,
       enum:["Method", "Recipe"]
-    }
-
+    },
+    review: [{type: Schema.Types.ObjectId, ref: "Review"}]
   },
 );
 

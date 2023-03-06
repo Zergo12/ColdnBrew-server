@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Review = require ('../models/Review')
 
-router.get("/", (req, res, next) => {
+router.get("/reviews", (req, res, next) => {
     Review
     .find()
     .then((AllReviews) => {

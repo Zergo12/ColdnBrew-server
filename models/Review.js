@@ -5,7 +5,7 @@ const reviewSchema = new Schema (
         title:{
             type:String,
         },
-        details: {
+        comments: {
             type: String,
         },
         image:{
@@ -13,7 +13,23 @@ const reviewSchema = new Schema (
         },
         raiting: {
             type: String,
-        }
+        },
+        property: {
+            type: String,
+        },
+        quality: {
+            type: String,
+        },
+        origin: {
+            type: String,
+        },
+        processing: {
+            type: String,
+        },
+        variety: {
+            type: String,
+        },
+
     },
     {
         timestamps: true

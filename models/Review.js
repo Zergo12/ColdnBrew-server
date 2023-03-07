@@ -1,4 +1,4 @@
-const { Schema, model } = require ("moongose");
+const { Schema, model } = require ("mongoose");
 
 const reviewSchema = new Schema (
     {
@@ -11,10 +11,10 @@ const reviewSchema = new Schema (
         image:{
             type:String,
         },
-        raiting: {
-            type: String,
+        rating: {
+            type: Number,
         },
-        property: {
+        producer: {
             type: String,
         },
         quality: {
@@ -23,13 +23,12 @@ const reviewSchema = new Schema (
         origin: {
             type: String,
         },
-        processing: {
+        process: {
             type: String,
         },
-        variety: {
+        varietal: {
             type: String,
         },
-
     },
     {
         timestamps: true

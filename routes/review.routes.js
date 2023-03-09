@@ -27,6 +27,8 @@ router.get("/review/:id", (req, res) => {
 
 router.post("/review/create", ( req, res, next ) => {
     const {  title, comments, image, rating, producer, quality, origin, process, varietal} = req.body
+    console.log (req.body) 
+    console.log (req.file) 
     Review
     .create({ title, comments, image, rating, producer, quality, origin, process, varietal})
     .then((review) => {

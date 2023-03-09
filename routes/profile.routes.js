@@ -12,11 +12,11 @@ router.get("/:id", (req, res) => {
     .catch(err => console.log(err))
 })
 
-router.put("/update/:id", (req, res) => {
+router.put("/editProfile/:id", (req, res) => {
     const { id } = req.params
-    const {picture, title, description} = req.body
+    const {picture, description} = req.body
     Model
-    .findByIdAndUpdate(id, {picture, title, description})
+    .findByIdAndUpdate(id, {picture, description})
     .then(user => {
         res.json(user)
     })

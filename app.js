@@ -29,6 +29,8 @@ app.use('/item', itemsRoutes);
 const reviewRoutes = require ('./routes/review.routes')
 app.use('/review', reviewRoutes);
 
+const profileRoutes = require ('./routes/profile.routes')
+app.use('/editProfile', profileRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

@@ -8,14 +8,13 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_SECRET
 });
 
-const storage = new CloudinaryStorage({
-  // cloudinary: cloudinary,
-  cloudinary,
-  params: {
-    allowed_formats: ['jpg', 'png', 'jpeg'],
-    folder: 'Cold&Brew' 
-    // resource_type: 'raw' => this is in case you want to upload other type of files, not just images
-  }
-});
+// const storage = new CloudinaryStorage({
+//   cloudinary,
+//   params: {
+//     allowed_formats: ['jpg', 'png', 'jpeg'],
+//     folder: 'Cold&Brew' 
+//   }
+// });
 
-module.exports = multer({ storage });
+module.exports = cloudinary
+// module.exports = multer({ storage });

@@ -22,7 +22,6 @@ router.get("/recipes", (req, res, next) => {
 
 router.get("/:id", (req, res) => {
     const { id } = req.params
-    console.log (id) 
     Item
     .findById(id)
     .then(item => {
